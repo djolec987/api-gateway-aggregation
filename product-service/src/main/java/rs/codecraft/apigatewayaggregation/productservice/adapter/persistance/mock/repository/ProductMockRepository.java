@@ -1,6 +1,9 @@
 package rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mock.repository;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Builder;
+import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mock.dto.ProductDtoMock;
+import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mock.mapper.ProductMapperMock;
 import rs.codecraft.apigatewayaggregation.productservice.core.entity.Product;
 import rs.codecraft.apigatewayaggregation.productservice.core.repository.ProductRepository;
 
@@ -11,10 +14,20 @@ import java.util.UUID;
 @Builder
 public class ProductMockRepository implements ProductRepository {
 
-    private List<Product> allProducts = new ArrayList<>(List.of(new Product(UUID.randomUUID(), "Mouse"), new Product(UUID.randomUUID(), "Keyboard")));
+    private List<ProductDtoMock> allProducts;
+
+    @PostConstruct
+    public void initialize() {
+        this.allProducts = new ArrayList<>();
+        this.allProducts.addAll(
+                List.of(
+                        new ProductDtoMock(UUID.fromString("9f5ebb7f-5175-44fb-be40-0fb9981833cc"), "Mouse"),
+                        new ProductDtoMock(UUID.fromString("358f07e7-f2c9-4b64-ab87-51e4b80f1d7e"), "Keyboard")
+                ));
+    }
 
     @Override
     public List<Product> getAllProducts() {
-        return allProducts;
+        return ProductMapperMock.INSTANCE.productDtoMockListToProductList(allProducts);
     }
 }

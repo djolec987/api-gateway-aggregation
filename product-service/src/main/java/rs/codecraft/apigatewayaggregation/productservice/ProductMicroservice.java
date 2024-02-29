@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductService {
+public class ProductMicroservice {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductService.class, args);
+        SpringApplication.run(ProductMicroservice.class, args);
     }
 }

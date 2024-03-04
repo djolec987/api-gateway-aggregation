@@ -6,6 +6,8 @@ import rs.codecraft.apigatewayaggregation.productservice.core.repository.Product
 import rs.codecraft.apigatewayaggregation.productservice.core.service.ProductService;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Builder
 public class ProductServiceImpl implements ProductService {
@@ -15,5 +17,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getAllProducts() {
         return productRepository.getAllProducts();
+    }
+
+    @Override
+    public Optional<Product> getById(UUID id) {
+        return productRepository.getById(id);
     }
 }

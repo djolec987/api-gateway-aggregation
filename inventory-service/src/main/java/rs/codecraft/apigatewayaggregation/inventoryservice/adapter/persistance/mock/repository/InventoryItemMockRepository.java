@@ -18,7 +18,7 @@ public class InventoryItemMockRepository implements InventoryItemRepository {
     private List<InventoryItemDtoMock> inventoryItems;
 
     @PostConstruct
-    public void initalize() {
+    public void initialize() {
         this.inventoryItems = new ArrayList<>();
         this.inventoryItems.add(
                 new InventoryItemDtoMock(UUID.fromString("c9a0ee0d-19c3-44cf-a63e-769f8a1515fe"),

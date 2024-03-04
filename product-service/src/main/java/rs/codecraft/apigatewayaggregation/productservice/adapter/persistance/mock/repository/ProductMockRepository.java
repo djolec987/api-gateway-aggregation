@@ -9,6 +9,7 @@ import rs.codecraft.apigatewayaggregation.productservice.core.repository.Product
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Builder
@@ -29,5 +30,13 @@ public class ProductMockRepository implements ProductRepository {
     @Override
     public List<Product> getAllProducts() {
         return ProductMapperMock.INSTANCE.productDtoMockListToProductList(allProducts);
+    }
+
+    @Override
+    public Optional<Product> getById(UUID id) {
+        return allProducts.stream()
+                .filter(p -> p.getId().equals(id))
+                .map(p -> ProductMapperMock.INSTANCE.productDtoMockToProduct(p))
+                .findFirst();
     }
 }

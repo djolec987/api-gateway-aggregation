@@ -12,4 +12,8 @@ public interface ProductRepository {
 
     Optional<Product> getById(UUID id);
 
+    default Product addProduct(Product product) {
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
 }

@@ -1,10 +1,7 @@
 package rs.codecraft.apigatewayaggregation.productservice.adapter.api.rest.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.codecraft.apigatewayaggregation.productservice.adapter.api.rest.dto.ProductDtoRest;
 import rs.codecraft.apigatewayaggregation.productservice.adapter.api.rest.mapper.ProductMapperRest;
 import rs.codecraft.apigatewayaggregation.productservice.core.entity.Product;
@@ -37,6 +34,14 @@ public class MainProductController {
             // TODO: We should throw an exception here - but not from here, rather the exception should be thrown from the usecase
             return null;
         }
+    }
+
+    @PostMapping
+    public ProductDtoRest addProduct(@RequestBody ProductDtoRest productDtoRest) {
+        Product createdProduct = productUseCase.addProduct(
+                ProductMapperRest.INSTANCE.productDtoRestToProduct(productDtoRest)
+        );
+        return ProductMapperRest.INSTANCE.productToProductDtoRest(createdProduct);
     }
 
 }

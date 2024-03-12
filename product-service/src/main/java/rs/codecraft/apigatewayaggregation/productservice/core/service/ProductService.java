@@ -12,4 +12,6 @@ public interface ProductService {
 
     Optional<Product> getById(UUID id);
 
+    Product addProduct(Product product);
+
 }

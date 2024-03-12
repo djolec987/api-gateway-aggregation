@@ -23,4 +23,9 @@ public class ProductUseCaseImpl implements ProductUseCase {
     public Optional<Product> getById(UUID id) {
         return productService.getById(id);
     }
+
+    @Override
+    public Product addProduct(Product product) {
+        return productService.addProduct(product);
+    }
 }

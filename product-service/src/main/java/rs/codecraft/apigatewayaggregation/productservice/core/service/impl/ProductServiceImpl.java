@@ -23,4 +23,9 @@ public class ProductServiceImpl implements ProductService {
     public Optional<Product> getById(UUID id) {
         return productRepository.getById(id);
     }
+
+    @Override
+    public Product addProduct(Product product) {
+        return productRepository.addProduct(product);
+    }
 }

@@ -1,2 +1,18 @@
 server:
   port: 8081
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: example
+      database: products
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+      uuid-representation: standard
+
+aga:
+  repository:
+    implementation: mongo

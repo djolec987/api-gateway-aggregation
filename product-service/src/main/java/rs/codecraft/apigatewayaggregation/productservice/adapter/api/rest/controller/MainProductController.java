@@ -21,7 +21,6 @@ public class MainProductController {
     @GetMapping("/all")
     public List<ProductDtoRest> getAllProducts() {
         List<Product> ps = productUseCase.getAllProducts();
-        System.out.println(ps);
         return ProductMapperRest.INSTANCE.productListToProductDtoRestList(productUseCase.getAllProducts());
     }
 

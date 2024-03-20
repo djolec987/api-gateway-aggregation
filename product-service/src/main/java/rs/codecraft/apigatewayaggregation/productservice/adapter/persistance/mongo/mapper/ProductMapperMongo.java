@@ -15,20 +15,8 @@ public interface ProductMapperMongo {
 
     ProductMapperMongo INSTANCE = Mappers.getMapper(ProductMapperMongo.class);
 
-//    @Named("stringToUUID")
-//    static UUID stringToUUID(String uuidAsString) {
-//        return uuidAsString == null ? null : UUID.fromString(uuidAsString);
-//    }
-//
-//    @Named("UUIDToString")
-//    static String UUIDToString(UUID id) {
-//        return id == null ? null : id.toString();
-//    }
-
-//    @Mapping(source = "id", target = "id", qualifiedByName = "stringToUUID")
     Product productDtoMongoToProduct(ProductDtoMongo productDtoMongo);
 
-//    @Mapping(source = "id", target = "id", qualifiedByName = "UUIDToString")
     ProductDtoMongo productToProductDtoMongo(Product product);
 
     List<Product> productDtoMongoListToProductList(List<ProductDtoMongo> productDtoMongoList);

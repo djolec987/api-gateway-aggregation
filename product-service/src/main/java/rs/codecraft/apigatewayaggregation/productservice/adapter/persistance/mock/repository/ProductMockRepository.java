@@ -39,4 +39,5 @@ public class ProductMockRepository implements ProductRepository {
                 .map(p -> ProductMapperMock.INSTANCE.productDtoMockToProduct(p))
                 .findFirst();
     }
+
 }

@@ -12,6 +12,11 @@ spring:
       host: localhost
       auto-index-creation: true
       uuid-representation: standard
+  kafka:
+    bootstrap-servers: localhost:9094
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 aga:
   repository:

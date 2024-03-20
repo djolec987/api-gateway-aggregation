@@ -36,4 +36,12 @@ public class ProductMongoRepository implements ProductRepository {
         ProductDtoMongo createdProduct = mongoRepositoryProduct.insert(mappedProduct);
         return ProductMapperMongo.INSTANCE.productDtoMongoToProduct(createdProduct);
     }
+
+    @Override
+    public Optional<Product> getByName(String name) {
+        return Optional.of(
+                ProductMapperMongo.INSTANCE.productDtoMongoToProduct(
+                        mongoRepositoryProduct.findByName(name).orElse(null)
+        ));
+    }
 }

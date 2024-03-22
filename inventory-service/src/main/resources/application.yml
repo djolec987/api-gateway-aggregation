@@ -10,9 +10,6 @@ spring:
       properties:
         spring:
           json:
-            value:
-              default:
-                type: rs.codecraft.apigatewayaggregation.inventoryservice.core.entity.Product
             use:
               type:
                 headers: false

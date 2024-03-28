@@ -14,13 +14,13 @@ public interface ProductMapperRest {
 
     ProductMapperRest INSTANCE = Mappers.getMapper(ProductMapperRest.class);
 
-    @Mapping(source = "nameOfTheProduct", target = "name")
-    Product productDtoRestToProduct(ProductDtoRest productDtoRest);
-
-    @Mapping(source = "name", target = "nameOfTheProduct")
-    ProductDtoRest productToProductDtoRest(Product product);
-
-    List<Product> productDtoRestListToProductList(List<ProductDtoRest> productDtoRestList);
-
-    List<ProductDtoRest> productListToProductDtoRestList(List<Product> productList);
+//    @Mapping(source = "nameOfTheProduct", target = "name")
+//    Product productDtoRestToProduct(ProductDtoRest productDtoRest);
+//
+//    @Mapping(source = "name", target = "nameOfTheProduct")
+//    ProductDtoRest productToProductDtoRest(Product product);
+//
+//    List<Product> productDtoRestListToProductList(List<ProductDtoRest> productDtoRestList);
+//
+//    List<ProductDtoRest> productListToProductDtoRestList(List<Product> productList);
 }

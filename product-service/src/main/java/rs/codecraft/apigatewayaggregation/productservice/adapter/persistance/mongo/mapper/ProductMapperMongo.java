@@ -14,13 +14,13 @@ import java.util.UUID;
 public interface ProductMapperMongo {
 
     ProductMapperMongo INSTANCE = Mappers.getMapper(ProductMapperMongo.class);
-
-    Product productDtoMongoToProduct(ProductDtoMongo productDtoMongo);
-
-    ProductDtoMongo productToProductDtoMongo(Product product);
-
-    List<Product> productDtoMongoListToProductList(List<ProductDtoMongo> productDtoMongoList);
-
-    List<ProductDtoMongo> productListToProductDtoMongoList(List<Product> productList);
+//
+//    Product productDtoMongoToProduct(ProductDtoMongo productDtoMongo);
+//
+//    ProductDtoMongo productToProductDtoMongo(Product product);
+//
+//    List<Product> productDtoMongoListToProductList(List<ProductDtoMongo> productDtoMongoList);
+//
+//    List<ProductDtoMongo> productListToProductDtoMongoList(List<Product> productList);
 
 }

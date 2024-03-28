@@ -1,7 +1,9 @@
 package rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.repository;
 
 import lombok.Builder;
+import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.dto.BookDtoMongo;
 import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.dto.ProductDtoMongo;
+import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.mapper.BookMapperMongo;
 import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.mapper.ProductMapperMongo;
 import rs.codecraft.apigatewayaggregation.productservice.adapter.persistance.mongo.repository.mongo.MongoRepositoryProduct;
 import rs.codecraft.apigatewayaggregation.productservice.core.entity.Product;
@@ -18,30 +20,35 @@ public class ProductMongoRepository implements ProductRepository {
 
     @Override
     public List<Product> getAllProducts() {
-        return ProductMapperMongo.INSTANCE.productDtoMongoListToProductList(mongoRepositoryProduct.findAll());
+//        return ProductMapperMongo.INSTANCE.productDtoMongoListToProductList(mongoRepositoryProduct.findAll());
+        return null;
     }
 
     @Override
     public Optional<Product> getById(UUID id) {
-        return Optional.of(
-                ProductMapperMongo.INSTANCE.productDtoMongoToProduct(
-                        mongoRepositoryProduct.findById(id).orElse(null)
-                ));
+//        return Optional.of(
+//                ProductMapperMongo.INSTANCE.productDtoMongoToProduct(
+//                        mongoRepositoryProduct.findById(id).orElse(null)
+//                ));
+        return null;
     }
 
     @Override
     public Product addProduct(Product product) {
-        ProductDtoMongo mappedProduct = ProductMapperMongo.INSTANCE.productToProductDtoMongo(product);
-        mappedProduct.setId(UUID.randomUUID());
-        ProductDtoMongo createdProduct = mongoRepositoryProduct.insert(mappedProduct);
-        return ProductMapperMongo.INSTANCE.productDtoMongoToProduct(createdProduct);
+
+//        ProductDtoMongo mappedProduct = ProductMapperMongo.INSTANCE.productToProductDtoMongo(product);
+//        mappedProduct.setId(UUID.randomUUID());
+//        ProductDtoMongo createdProduct = mongoRepositoryProduct.insert(mappedProduct);
+//        return ProductMapperMongo.INSTANCE.productDtoMongoToProduct(createdProduct);
+        return null;
     }
 
     @Override
     public Optional<Product> getByName(String name) {
-        return Optional.of(
-                ProductMapperMongo.INSTANCE.productDtoMongoToProduct(
-                        mongoRepositoryProduct.findByName(name).orElse(null)
-        ));
+//        return Optional.of(
+//                ProductMapperMongo.INSTANCE.productDtoMongoToProduct(
+//                        mongoRepositoryProduct.findByName(name).orElse(null)
+//        ));
+        return null;
     }
 }

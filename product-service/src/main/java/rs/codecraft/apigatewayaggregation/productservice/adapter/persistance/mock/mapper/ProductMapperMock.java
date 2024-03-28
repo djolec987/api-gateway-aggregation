@@ -13,14 +13,14 @@ public interface ProductMapperMock {
 
     ProductMapperMock INSTANCE = Mappers.getMapper(ProductMapperMock.class);
 
-    @Mapping(source = "productName", target = "name")
-    Product productDtoMockToProduct(ProductDtoMock productDtoMock);
-
-    @Mapping(source = "name", target = "productName")
-    ProductDtoMock productToProductDtoMock(Product product);
-
-    List<Product> productDtoMockListToProductList(List<ProductDtoMock> productDtoMockList);
-
-    List<ProductDtoMock> productListToProductDtoMockList(List<Product> productList);
+//    @Mapping(source = "productName", target = "name")
+//    Product productDtoMockToProduct(ProductDtoMock productDtoMock);
+//
+//    @Mapping(source = "name", target = "productName")
+//    ProductDtoMock productToProductDtoMock(Product product);
+//
+//    List<Product> productDtoMockListToProductList(List<ProductDtoMock> productDtoMockList);
+//
+//    List<ProductDtoMock> productListToProductDtoMockList(List<Product> productList);
 
 }
